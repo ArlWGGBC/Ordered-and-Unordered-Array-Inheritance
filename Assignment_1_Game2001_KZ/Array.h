@@ -97,8 +97,8 @@ public:
 		assert(val >= 0);
 		m_growSize = val;
 	}
-private:
-	// Private functions
+protected:
+	// Protected functions
 	// Recursive Binary Search
 	int binarySearch(T searchKey, int lowerBound, int upperBound)
 	{
@@ -141,31 +141,32 @@ private:
 	// Expansion
 	bool Expand()
 	{
-		if (m_growSize <= 0)
+		if (this->m_growSize <= 0)
 		{
 			// LEAVE!
 			return false;
 		}
 
 		// Create the new array
-		T* temp = new T[m_maxSize + m_growSize];
+		T* temp = new T[this->m_maxSize + this->m_growSize];
 		assert(temp != nullptr);
 
 		// Copy the contents of the original array into the new array
-		memcpy(temp, m_array, sizeof(T) * m_maxSize);
+		memcpy(temp, this->m_array, sizeof(T) * this->m_maxSize);
 
 		// Delete the old array
-		delete[] m_array;
+		delete[] this->m_array;
 
 		// Clean up variable assignments
-		m_array = temp;
+		this->m_array = temp;
 		temp = nullptr;
 
-		m_maxSize += m_growSize;
-
+		this->m_maxSize += this->m_growSize;
+		m_growSize = m_growSize * 2;
+		std::cout << "Grow size is : " << m_growSize << std::endl;
 		return true;
 	}
-private:
+protected:
 	// Private Variables
 	T* m_array;			// Pointer to the beginning of the array
 

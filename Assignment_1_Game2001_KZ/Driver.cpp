@@ -57,7 +57,7 @@ std::cout << "\n\n\n\n\n\n\n\n";
 	uOArray.push(3);
 	uOArray.push(53);
 	uOArray.push(83);
-	uOArray.push(23);                 // 3 23 53 82 83t
+	uOArray.push(23);        
 	uOArray.push(82);
 
 	uOArray[2] = 112; // replace index 2 with 112

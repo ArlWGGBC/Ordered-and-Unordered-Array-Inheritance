@@ -56,6 +56,5 @@ public:
 		return -1;
 	}
 private:
-// Private functions
 
 };

@@ -70,10 +70,6 @@ public:
 	}
 
 private:
-	// Private functions
-
-
 	
-	// Expansion
 
 };
